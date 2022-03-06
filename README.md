@@ -42,6 +42,8 @@ That being said, I would recommend further investigation on Lot 3. And more than
 
 ## T-Tests on Suspension Coils
 
+
+
 An RScript is written for t-test that compares all manufacturing lots against mean PSI of the population (5 pt)
 An RScript is written for three t-tests that compare each manufacturing lot against mean PSI of the population (10 pt)
 There is a summary of the t-test results across all manufacturing lots and for each lot (5 pt)
