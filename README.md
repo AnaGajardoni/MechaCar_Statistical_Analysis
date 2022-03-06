@@ -28,14 +28,21 @@ The r^2 shows that 71% of our observations fit our linear model. Since we are ta
 
 The second part of this study covers the variance of suspension coils: based on the design specifications for MechaCar, the variance of the suspension coils must not exceed 100 pounds per square inch. In a first glance, the data seems to prove the coils are within the window specified given the PSI variance is 62.29 as the summary below shows:
 
+![all_lots_summary](/resources/all_lots_summary.png)
 
+However, when we study the variance per lot, our findings prove that there is something awkard with Lot 3 (variance of 1270.29)
 
-However, when we study the variance per lot, our findings prove that there is something off with Lot 3 (variance of 1270.29)
+![lot_summary](/resources/lot_summary.png)
 
+The boxplot below clearly shows how heterogeneous each lot is by its outliers:
 
-The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
+![boxplot_lot](/resources/boxplot_lot.png)
+
+That being said, I would recommend further investigation on Lot 3. And more than that, because that lot does not meet the established criteria, we might ask whether those should be considered at all.
 
 ## T-Tests on Suspension Coils
+
+
 
 An RScript is written for t-test that compares all manufacturing lots against mean PSI of the population (5 pt)
 An RScript is written for three t-tests that compare each manufacturing lot against mean PSI of the population (10 pt)
