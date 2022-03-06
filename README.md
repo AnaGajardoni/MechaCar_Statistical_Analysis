@@ -42,9 +42,47 @@ That being said, I would recommend further investigation on Lot 3. And more than
 
 ## T-Tests on Suspension Coils
 
+Lastly, we were requested to compare all manufacturing lots against mean PSI of the population. Presuming the mean is 1500, we ran the t-test for all observations, then for each lot separately. 
 
+The t-test ran for the entire dataset shows that p-value is 0.06 (higher than 0.05 being used for this research), thus, there is not enough evidence to support rejecting the null hypothesis.
 
-An RScript is written for t-test that compares all manufacturing lots against mean PSI of the population (5 pt)
-An RScript is written for three t-tests that compare each manufacturing lot against mean PSI of the population (10 pt)
-There is a summary of the t-test results across all manufacturing lots and for each lot (5 pt)
+![t_test_psi](/resources/t_test_psi.png)
 
+Lot 1 has a p-value of 1, showing that there is no statistical difference between the sample mean and the presumed mean.
+
+![t_test_psi_lot1](/resources/t_test_psi_lot1.png)
+
+Lot 2 has a p-value of 0.61, showing again that the null hypothesis cannot be rejected. 
+
+![t_test_psi_lot2](/resources/t_test_psi_lot2.png)
+
+Lastly, Lot 3 has a p-value of 0.04, indicating that the null hypothesis should be rejected for this lot.
+
+![t_test_psi_lot3](/resources/t_test_psi_lot3.png)
+
+As already stated in analysis #2, maybe it would be a good idea to remove Lot 3 - either partially or entirely - from the study given the coils do not seem to meet the needed standard.
+
+## Study Design: MechaCar vs Competition
+
+### Metrics
+
+Our recommendation would be to make models and collect the following data on the cars:
+
+- Cost
+- City Efficiency
+- Highway Efficiency
+- Horse Power
+- Maintenance Cost
+- Safety Rating
+- MPG
+
+This time, instead of basing the study on MPG, I would rather start with Safety Rating. 
+
+### Hypothesis
+
+- Null Hypothesis (Ho): MechaCar is priced correctly based on its safety items;
+- Alternative Hypothesis (Ha): MechaCar is not priced correctly based on its safety items.
+
+## Testing
+
+For testing, we would make a multiple linear regression to determine what factors correlate or not to the safety ratings.
