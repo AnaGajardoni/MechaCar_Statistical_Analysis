@@ -20,12 +20,22 @@ summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_cleara
 # Deliverable 02
 
 # load csv file
-SuspensionCoil_df <- read.csv('Suspension_Coil.csv')
+SuspensionCoil <- read.csv('Suspension_Coil.csv')
 
 # total summary 
-total_summary <- SuspensionCoil_df %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+total_summary <- SuspensionCoil %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
 
 # total summary by lot
-lot_summary <- SuspensionCoil_df %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+lot_summary <- SuspensionCoil %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
 
 
+# Deliverable 03
+
+t.test(SuspensionCoil$PSI, mu=1500)
+
+t.test((subset(SuspensionCoil, Manufacturing_Lot=="Lot1"))$PSI, mu=1500)
+t.test((subset(SuspensionCoil, Manufacturing_Lot=="Lot2"))$PSI, mu=1500)
+t.test((subset(SuspensionCoil, Manufacturing_Lot=="Lot3"))$PSI, mu=1500)
+
+
+# 
