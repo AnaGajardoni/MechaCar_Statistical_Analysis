@@ -10,29 +10,28 @@ As a first step, we need to analyse a set of 50 prototype MechaCars, which were 
 
 As a first approach, a linear model (using R) was created to relate mpg to vehicle length, vehicle weight, spoiler angle, ground clearance and AWD (All-wheel-drive):
 
-**lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=MechaCar)**
+**summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=MechaCar))**
 
 As a result, we got:
 
-![summary_lm_mpg](/resources/summary_lm_mpg.png)
+![Summary_lm_mpg](/resources/Summary_lm_mpg.png)
 
+That means the linear regression comes to:
 
-vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD 
+**mpg = 6.267 * vehicle_length + 0.001245 vehicle_weight + 0.06877 * spoiler_angle + 3.546 * ground_clearance -3.411 * AWD - 104**
 
-The MechaCar_mpg.csv dataset contains mpg test results for 50 prototype MechaCars. The MechaCar prototypes were produced using multiple design specifications to identify ideal vehicle performance. Multiple metrics, such as vehicle length, vehicle weight, spoiler angle, drivetrain, and ground clearance, were collected for each vehicle. Using your knowledge of R, you’ll design a linear model that predicts the mpg of MechaCar prototypes using several variables from the MechaCar_mpg.csv file. Then, you’ll write a short interpretation of the multiple linear regression results in the README.md.
-
-
-
-
-
-
-
-
-Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
-Is the slope of the linear model considered to be zero? Why or why not?
-Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
+Our p-value is 5.35e-11 - way smaller than our assumed significance of 0.05% showing that there is sufficient evidence to reject our null hypothesis, which means the slope of our linear model is not zero. 
+Still according to the summary above, the variables vehicle length ahd ground clearance showed non-random amounts of variance to the model meaning they **DO** have a significant impact on mpg. On the other hand, the p-values of vehicle weight, spoiler angle and AWD are above 0.05 indicating there is a random amount of variance in the dataset observations.
+The r^2 shows that 71% of our observations fit our linear model. Since we are talking about mpg and not safety items, I would say it is a good prediction. 
 
 ## Summary Statistics on Suspension Coils
+
+The second part of this study covers the variance of suspension coils: based on the design specifications for MechaCar, the variance of the suspension coils must not exceed 100 pounds per square inch. In a first glance, the data seems to prove the coils are within the window specified given the PSI variance is 62.29 as the summary below shows:
+
+
+
+However, when we study the variance per lot, our findings prove that there is something off with Lot 3 (variance of 1270.29)
+
 
 The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
 
